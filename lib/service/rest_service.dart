@@ -8,7 +8,7 @@ import 'package:retrofit/retrofit.dart';
 
 part 'rest_service.g.dart';
 
-@RestApi(baseUrl: Utils.baseUrl, parser: Parser.FlutterCompute)
+@RestApi(parser: Parser.FlutterCompute)
 abstract class RestService {
   factory RestService({Dio dio, String baseUrl}) = _RestService;
 

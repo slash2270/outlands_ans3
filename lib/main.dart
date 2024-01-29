@@ -98,7 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text('${Utils.API} Demo'),
+        title: const Text('${Utils.api} Demo'),
       ),
       body: const Center(
         child: Column(

@@ -12,9 +12,7 @@ class Utils {
   static const String courseName = 'c_name';
   static const String courses = 'c_list';
   /// api
-  static const String API = 'API';
-  static const String GET = 'GET';
-  static const String POST = 'POST';
+  static const String api = 'API';
   static const String baseUrl = '';
   static const Map<String, dynamic> headers = {'content-type': ['application/json']};
   static const String getCourses = '/getCourses';
