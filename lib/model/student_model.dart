@@ -1,3 +1,5 @@
+import 'package:outlands_ans3/model/course_model.dart';
+
 import '../utils/utils.dart';
 
 class StudentModel {
@@ -6,28 +8,26 @@ class StudentModel {
   String studentId = '';
   String studentPassword = '';
   String studentName = '';
-  String courseId = '';
-  StudentModel(this.id, this.studentId, this.studentPassword, this.studentName, this.courseId);
+  List<CourseModel> courses = [];
+  StudentModel(this.id, this.studentId, this.studentPassword, this.studentName, this.courses);
 
-  Map<String, Object> toMap() {
+  Map<String, Object> toJson() {
     Map<String, Object> map = <String, Object>{
+      Utils.id: id > 0 ? id : 0,
       Utils.studentId: studentId,
       Utils.studentPassword: studentPassword,
       Utils.studentName: studentName,
-      Utils.courseId: courseId,
+      Utils.courses: courses.isEmpty ? [] : courses,
     };
-    if (id > 0) {
-      map[Utils.id] = id;
-    }
     return map;
   }
 
-  StudentModel.fromMap(Map<dynamic, dynamic> map) {
+  StudentModel.fromJson(Map<String, dynamic> map) {
     id = map[Utils.id];
     studentId = map[Utils.studentId];
     studentPassword = map[Utils.studentPassword];
     studentName = map[Utils.studentName];
-    courseId = map[Utils.courseId];
+    courses = map[Utils.courses];
   }
 
 }

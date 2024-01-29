@@ -1,23 +1,24 @@
-import 'dart:convert';
 
-class Teacher {
-  const Teacher({required this.id, required this.courses});
 
-  final String id;
-  final List<String> courses;
+import '../utils/utils.dart';
 
-  factory Teacher.fromJson(Map<String, dynamic> json) =>
-      Teacher(
-          id: json["id"],
-          courses: json['courses'],
-      );
+class CourseModel {
 
-  factory Teacher.fromJsonString(String jsonString) => Teacher.fromJson(json.decode(jsonString));
+  String? courseId;
+  String? courseName;
+  CourseModel(this.courseId, this.courseName);
 
-  Map<String, dynamic> toJson() => {
-    "id": id,
-    "courses": courses,
-  };
+  Map<String, Object> toJson() {
+    Map<String, Object> map = <String, Object>{
+      Utils.courseId: courseId ?? "",
+      Utils.courseName: courseName ?? "",
+    };
+    return map;
+  }
 
-  String toJsonString(Teacher data) => json.encode(data.toJson());
+  CourseModel.fromJson(Map<String, dynamic> map) {
+    courseId = map[Utils.courseId];
+    courseName = map[Utils.courseName];
+  }
+
 }
