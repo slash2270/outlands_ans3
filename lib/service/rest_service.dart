@@ -20,13 +20,13 @@ abstract class RestService {
   @POST(Utils.getTeachers)
   AsyncJson getTeachers();
 
-  /// 老師課程列表
-  @PATCH('${Utils.getTeachersCourses}/{id}')
-  AsyncJson getTeachersCourses({@Path() required String teacherId});
-
   /// 學生列表
   @POST(Utils.getStudents)
   AsyncJson getStudents();
+
+  /// 老師課程列表
+  @PATCH('${Utils.getTeachersCourses}/{id}')
+  AsyncJson getTeachersCourses({@Path() required String teacherId});
 
   /// 更新課程內容
   @PATCH('${Utils.updateCourses}/{id}')
