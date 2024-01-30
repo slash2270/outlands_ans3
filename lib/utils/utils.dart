@@ -23,4 +23,5 @@ class Utils {
   static const String addTeacher = '/addTeacher';
   static const String addCourses = '/addCourses';
   static const String deleteCourses = '/deleteCourses';
+
 }
